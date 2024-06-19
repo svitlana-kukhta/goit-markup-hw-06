@@ -2,36 +2,39 @@
 ::after, 
 ::before {box-sizing: border-box;}
 body {font-family: "Roboto", sans-serif;
-    color:#434455;
-    background-color: #FFFFFF;
-    margin-top: 0;
-    margin-bottom: 0;}
+        color:#434455;
+        background-color: #FFFFFF;
+        margin-top: 0;
+        margin-bottom: 0;}
 ul {list-style-type: none;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0;}
-img {display: block;}
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 0;}
+img {display: block;
+        max-width: 100%;}
 a {text-decoration: none;
-    font-style: normal;}
+        font-style: normal;}
 h1, h2, h3 {margin: 0}
 p {margin-top: 0;
-    margin-bottom: 0;}
-/*Header*/
+        margin-bottom: 0;}
+
+/*Header Mobile*/
 .header {display: flex;
         flex-direction: row;
         align-items: center;
         border-bottom: 1px solid #e7e9fc;
         box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);}      
-.container {width: 1158px;
-            padding-left: 15px;
-            padding-right: 15px;
-            margin-right: auto;
-            margin-left: auto;} 
+.container {width: 320px;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin: 0 auto;} 
 .header .container {display: flex;}   
 .navigation-content {display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    margin-right: auto;} 
+                flex-direction: row;
+                align-items: center;
+                margin-right: auto;
+                padding-top: 16px;
+                padding-bottom: 16px;} 
 .logo {font-family: "Raleway", sans-serif;
         font-weight: 700;
         font-size: 18px;
@@ -39,91 +42,146 @@ p {margin-top: 0;
         letter-spacing: 0.03em;
         text-transform: uppercase;
         color: #4d5ae5;
-        margin-right: 76px;}                               
+        margin-right: 149px;}                               
 .studio {color: #2e2f42;}
-.navigation-list {display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                flex-direction: row;
-                gap: 40px;
-                margin-right: auto;}
-.navigation-item {font-weight: 500;
-            font-size: 16px;
-            line-height: 1.5;
-            letter-spacing: 0.02em;
-            color: #2e2f42;
-            padding-top: 24px;
-            padding-bottom: 24px;
-            transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
-.navigation-item:hover, .navigation:focus {color: #404BBF;}
-.current {position: relative;
-        color: #404bbf;}
-.current::after {content: "";
-                position: absolute;
-                left: 0;
-                bottom: -1px;
-                border-radius: 2px;
-                width: 100%;
-                height: 4px;
-                background: #404bbf;}
+.navigation-list {display: none;}
+.contacts-list {display: none;}
 
-.contacts-list {font-style: normal;
-                display: flex;
-                flex-direction: row;
+/*Menu Mobile*/
+.menu-open-btn {display: flex;
                 align-items: center;
-                gap: 40px;
-                padding-top: 24px;
-                padding-bottom: 24px;}
-.contacts {font-weight: 400;
+                justify-content: center;
+                position: absolute;
+                top: 16px;
+                right: 16px;
+                width: 24px;
+                height: 24px;
+                padding: 0;
+                cursor: pointer;
+                border: none;
+                background-color: transparent;
+                transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);}
+.menu-mob {position: fixed;
+        top: 0;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        min-width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        padding-left: 16px;
+        padding-top: 24px;
+        padding-bottom: 40px;
+        padding-right: 24px;
+        z-index: 999;}
+.menu-close-btn {display: block;
+                margin-left: auto;
+                margin-bottom: 24px;
+                border-radius: 50%;
+                cursor: pointer;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                background-color: transparent;
+                width: 24px;
+                height: 24px;
+                padding: 0;}
+.menu-close-btn:hover, .menu-close-btn:focus {background-color: #404bbf;
+                                                border: none;}                                              
+.menu-close-btn:hover > .menu-close-icon, .menu-close-btn:focus > .menu-close-icon {fill: #fff;}
+.menu-close-icon {transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+                fill: #2e2f42;}
+.navigation-content-mob-box {flex-grow: 1;}           
+.navigation-list-mob {display: flex;
+                        flex-direction: column;
+                        gap: 40px;}
+.navigation-link-mob {font-weight: 700;
+                        font-size: 36px;
+                        line-height: 1.11;
+                        letter-spacing: 0.02em;
+                        color: #2e2f42;}
+.current {color: #404bbf;}
+.contacts-list-mob {margin-top: auto;
+                margin-bottom: 48px;
+                display: flex;
+                flex-direction: column;
+                gap: 24px;}
+.contacts-mob {font-weight: 500;
+        font-size: 20px;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        color: #434455;}
+.contacts-mob:hover, .contacts-mob:focus {color: #4d5ae5;}        
+.social-links-list-mob {display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 40px;}
+.social-links-item-mob {margin-top: 8px;
+                        margin-bottom: 0;
+                        padding: 0 0;
+                        width: 40px;
+                        height: 40px;}
+.social-links-mob {position: relative;
+                width: 100%;
+                height: 100%;
+                background-color: #4d5ae5;
+                border-radius: 50%;
+                display: flex;
+                align-items: center; 
+                justify-content: center;
+                transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
+.social-links-mob:hover, .social-links-mob:focus {background-color: #404bbf;}    
+.icon {fill: #f4f4fd;
+        top: 12px;
+        left: 12px;
+        position: absolute;
+        background-position: 50% 50%;}
+
+/*Order service Mobile*/
+.buy-service {background-color: #2e2f42;
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
+        url(../images/hero_mob_1x.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        max-width: 320px;
+        padding-top: 72px;
+        padding-bottom: 72px;
+        margin: 0 auto;
+        background-position: center;}
+
+@media screen and (min-resolution: 192dpi), (min-resolution: 2dppx) {
+.buy-service {background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero_mob_2x.jpg);}}
+
+.slogan {font-weight: 700;
+        font-size: 36px;
+        letter-spacing: 0.02em;
+        text-align: center;
+        line-height: 1.11;
+        color: #fff;
+        max-width: 216px;
+        margin-right: auto;
+        margin-left: auto;}
+.button {display: block;
+        min-width: 169px;
+        margin-top: 72px;
+        height: 56px;
+        border:none;
+        cursor: pointer;
+        color: #fff;
         font-size: 16px;
         line-height: 1.5;
-        letter-spacing: 0.02em;
-        color: #434455;
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
-.contacts:hover, .contacts:focus {color: #404BBF;}
-
-/*Order service*/
-.buy-service {background-color: #2e2f42;
-            background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            max-width: 1440px;
-            padding-top: 188px;
-            padding-bottom: 188px;
-            margin: 0 auto;
-            background-position: center;}
-.slogan {font-weight: 700;
-    font-size: 56px;
-    letter-spacing: 0.02em;
-    text-align: center;
-    line-height: 1.07;
-    color: #fff;
-    max-width: 496px;
-    margin-right: auto;
-    margin-left: auto;}
-.button {display: block;
-            min-width: 169px;
-            margin-top: 48px;
-            height: 56px;
-            border:none;
-            cursor: pointer;
-            padding: 16px 32px;
-            color: #fff;
-            font-size: 16px;
-            line-height: 1.5;
-            letter-spacing: 0.04em;
-            font-family: "Roboto", sans-serif;
-            font-weight: 500;
-            background-color: #4d5ae5;
-            border-radius: 4px;
-            margin-right: auto;
-            margin-left: auto;
-            transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
+        letter-spacing: 0.04em;
+        font-family: "Roboto", sans-serif;
+        background-color: #4d5ae5;
+        border-radius: 4px;
+        margin-right: auto;
+        margin-left: auto;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
 .button:hover, .button:focus {background-color: #404BBF;}
 
 /*Our advantages*/
-.advantages {padding-top: 120px;
-            padding-bottom: 120px;}
+.advantages {padding-top: 56px;
+                padding-bottom: 56px;}
 .visually-hidden {position: absolute;
                 width: 1px;
                 height: 1px;
@@ -135,58 +193,46 @@ p {margin-top: 0;
                 clip: rect(0 0 0 0);
                 overflow: hidden;}
 .advantages-list {display: flex;
-                align-items: flex-start;
-                justify-content: flex-start;
-                gap: 24px;}
-.adv-item {width: calc((100% - 72px) / 4);}
-.adv-item-img {display: flex;
-                align-items: center;
-                justify-content: center;
-                max-width: 264px;
-                height: 112px;
-                background-color: #f4f4fd;
-                border-radius: 4px;
-                border: 1px solid #8e8f99;
-                margin-bottom: 8px;
-                position: relative}
-.adv-item-icon {position: absolute;
-                fill:#2e2f42;;
-                background-position: 50% 50%;}
-.advantages-title {font-weight: 500;
-                    font-size: 20px;
-                    line-height: 1.2;
-                    letter-spacing: 0.02em;
-                    color: #2e2f42;
-                    margin-bottom: 8px;}
-.adv-description {font-weight: 400;
+                flex-wrap: wrap;
+                gap: 72px;}
+.adv-item {}
+.adv-item-img {display: none;}
+.advantages-title { font-weight: 700;
+                font-size: 36px;
+                line-height: 1.11;
+                letter-spacing: 0.02em;
+                text-align: center;
+                color: #2e2f42;
+                margin-bottom: 8px;}
+.adv-description {font-weight: 500;
                 font-size: 16px;
                 line-height: 1.5;
                 letter-spacing: 0.02em;
                 color: #434455;}
 
-/*Our team*/
+/*Our team Mobile*/
 .team {background-color: #f4f4fd;
-        padding-top: 120px;
-        padding-bottom: 120px;}
+        padding-top: 96px;
+        padding-bottom: 96px;}
 .header-our-team {font-weight: 700;
-            font-size: 36px;
-            line-height: 1.11111;
-            letter-spacing: 0.02em;
-            line-height: 1.11;
-            text-align: center;
-            text-transform: capitalize;
-            color: #2e2f42;
-            margin-bottom: 72px;}
+        font-size: 36px;
+        line-height: 1.11;
+        letter-spacing: 0.02em;
+        line-height: 1.11;
+        text-align: center;
+        text-transform: capitalize;
+        color: #2e2f42;
+        margin-bottom: 72px;}
 .colleague-list {display: flex;
+                flex-wrap: wrap;
                 align-items: center;
                 justify-content: center;
-                gap: 24px;}
+                gap: 72px;}
 .colleague-info {background: #fff;
                 border-radius: 0 0 4px 4px;
-                width: calc((100% - 72px) / 4);
                 box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);}
 .colleague-info-text {padding-bottom: 32px;
-                    padding-top: 32px;}
+                padding-top: 32px;}
 .colleague-name {font-weight: 500;
                 font-size: 20px;
                 letter-spacing: 0.02em;
@@ -196,19 +242,17 @@ p {margin-top: 0;
                 text-align: center;
                 margin-bottom: 8px;}
 .colleague-title {font-weight: 400;
-                    font-size: 16px;
-                    line-height: 1.5;
-                    letter-spacing: 0.02em;
-                    color: #434455;
-                    text-align: center;}
+                font-size: 16px;
+                line-height: 1.5;
+                letter-spacing: 0.02em;
+                color: #434455;
+                text-align: center;}
 .social-links-list {display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex-direction: row;
-                    gap: 24px;}
-.social-links-item {margin-right: 0;
-                margin-left: 0;
-                margin-top: 8px;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+                gap: 24px;}
+.social-links-item {margin-top: 8px;
                 margin-bottom: 0;
                 padding: 0 0;
                 width: 40px;
@@ -229,9 +273,10 @@ p {margin-top: 0;
         position: absolute;
         background-position: 50% 50%;}
 
-/*Portfolio*/
-.portfolio {padding-top: 120px;
-            padding-bottom: 120px;}
+/*Portfolio Mobile*/
+.portfolio {padding-top: 96px;
+        padding-bottom: 96px;}
+.portfolio .container {margin: 0 auto;}
 .portfolio-header {font-weight: 700;
                 font-size: 36px;
                 line-height: 1.11;
@@ -239,20 +284,18 @@ p {margin-top: 0;
                 text-align: center;
                 text-transform: capitalize;
                 color: #2e2f42;
-                margin-bottom:72px;}
+                margin-bottom: 72px;}
 .portfolio-list  {display: flex;
                 justify-content: center;
                 flex-direction: row;
-                gap: 24px;
                 flex-wrap: wrap;
-                row-gap: 48px;}
+                gap: 48px;}
 .portfolio-item {background: #fff;
-                width: calc((100% - 48px) / 3);
                 transition:  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);}
 .portfolio-item:hover {box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);}                
 .portfolio-item:hover .portfolio-item-img-txt {transform: translateY(0%);}
 .portfolio-item-img {position: relative;
-                    overflow: hidden;}
+                overflow: hidden;}
 .portfolio-item-img-txt {position: absolute;
                         top: 0;
                         font-size: 16px;
@@ -271,52 +314,60 @@ p {margin-top: 0;
                 border-right: 1px solid #e7e9fc;
                 padding: 32px 16px;}
 .portfolio-services {font-weight: 500;
-                    font-size: 20px;
-                    line-height: 1.2;
-                    letter-spacing: 0.02em;
-                    color: #2e2f42;
-                    margin-bottom: 8px;}
+                font-size: 20px;
+                line-height: 1.2;
+                letter-spacing: 0.02em;
+                color: #2e2f42;
+                margin-bottom: 8px;}
 .service-text {font-weight: 400;
-                    font-size: 16px;
-                    line-height: 1.5;
-                    letter-spacing: 0.02em;
-                    color: #434455;}
+                font-size: 16px;
+                line-height: 1.5;
+                letter-spacing: 0.02em;
+                color: #434455;}
 
-/*Footer*/                    
+/*Footer Mobile*/                    
 .footer {background-color: #2e2f42;
-        padding-top: 100px;
-        padding-bottom: 100px;}
-.footer .container {display: flex;
-                    align-items: baseline;} 
-.footer-content {margin-right: 120px;}
+        padding-top: 96px;
+        padding-bottom: 96px;}
+.footer .container {display: column;} 
 .footer-logo {display: inline-block;
-            margin-bottom: 16px;
-            font-family: "Raleway", sans-serif;
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 1.17;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-            color: #4d5ae5;}
+                margin-bottom: 16px;
+                font-family: "Raleway", sans-serif;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 1.17;
+                text-transform: uppercase;
+                letter-spacing: 0.03em;
+                color: #4d5ae5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+                gap: 0px;}
 .footer-studio {color: #f4f4fd;}
 .footer-text {font-weight: 400;
-            font-size: 16px;
-            line-height: 1.5;
-            letter-spacing: 0.02em;
-            color: #f4f4fd;
-            max-width: 264px;}
+                font-size: 16px;
+                line-height: 1.5;
+                letter-spacing: 0.02em;
+                color: #f4f4fd;
+                max-width: 288px;
+                margin-bottom: 72px;}
 
-/*Social media*/
+/*Social media Mobile*/
 .social {padding: 0 0;
-        margin: 0 0;}
+        margin: 0 auto;
+        min-width: 208px;}
 .social-title {font-weight: 500;
                 font-size: 16px;
                 line-height: 1.5;
                 letter-spacing: 0.02em;
                 color: #fff;
-                margin-bottom: 16px;}
+                margin-bottom: 16px;
+                text-align: center;}
 .soc-links-list {display: flex;
-                gap: 16px;}
+                gap: 16px;
+                margin-bottom: 72px;
+                justify-content: center;}
 .soc-links-item {width: 40px;
                 height: 40px;}        
 .soc-links {position: relative;
@@ -332,38 +383,41 @@ p {margin-top: 0;
                 position: absolute;}
 .soc-links:hover, .soc-links:focus {background-color: #31d0aa;} 
 
-/*Subscribe*/
+/*Subscribe Mobile*/
 .subscribe-box {padding: 0 0;
                 margin: 0;
-                margin-left: 80px;
-                display: block;
-                width: 453px;
-                min-height: 80px;}
-.subsribe-title {margin-bottom: 16px;
+                display: flex;
+                flex-wrap: wrap;
+                width: 288px;
+                min-height: 136px;}
+.subsribe-title {margin-right: auto;
+                margin-left: auto;
+                margin-bottom: 16px;
                 font-weight: 500;
                 font-size: 16px;
                 line-height: 1.5;
                 letter-spacing: 0.02em;
                 color: #fff;}
-.subscribe-form {display: flex;
-                gap: 24px;
-                width: 453px;}
+.subscribe-form {width: 288px;}
 .subscribe-input {border: 1px solid #fff;
                 border-radius: 4px;
-                width: 264px;
+                width: 288px;
                 min-height: 40px;
                 background-color: transparent;
-                padding-left: 16px;
                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
                 font-weight: 400;
                 font-size: 12px;
                 line-height: 2;
                 letter-spacing: 0.04em;
-                color: #ffffff;}
-.subscribe-input::placeholder {color: #ffffff;}
+                color: #ffffff;
+                margin-bottom: 16px;                }
+.subscribe-input::placeholder {color: #ffffff;
+                                padding-left: 16px;}
 .subscribe-button {display: flex;
                 align-items: center;
                 justify-content: center;
+                margin-right: auto;
+                margin-left: auto;
                 border-radius: 4px;
                 padding: 8px 24px;
                 min-width: 165px;
@@ -383,7 +437,7 @@ p {margin-top: 0;
 .subscribe-button:hover, .subscribe-button:focus {background-color: #404BBF;}                
 .subscribe-icon {fill: #fff;
                 margin-left: 16px;}
-/*Modal window*/
+/*Modal window Mobile*/
 .backdrop {background-color: rgba(46, 47, 66, 0.4);
                 position: fixed;
                 top: 0;
@@ -399,8 +453,8 @@ p {margin-top: 0;
         visibility: visible;
         pointer-events: auto;}
 .modal {position: absolute;
-        width: 408px;
-        min-height: 584px;
+        width: 288px;
+        min-height: 623px;
         background-color: #fcfcfc;
         border-radius: 4px;
         top: 50%;
@@ -409,8 +463,8 @@ p {margin-top: 0;
         box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
         overflow-y: auto;
         transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        padding-left: 24px;
-        padding-right: 24px;
+        padding-left: 16px;
+        padding-right: 16px;
         padding-top: 72px;
         padding-bottom: 24px;} 
 .modal-close-btn {position: absolute;
@@ -438,8 +492,7 @@ p {margin-top: 0;
         text-align: center;
         color: #2e2f42;
         margin-bottom: 16px;}
-.form-item {margin-bottom: 8px;
-                }
+.form-item {margin-bottom: 8px;}
 .modal-label {font-weight: 400;
         font-size: 12px;
         line-height: 1.17;
@@ -544,4 +597,256 @@ p {margin-top: 0;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
         transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;}
-.service-order-button:hover, .service-order-button:focus {background-color: #404bbf;}     
+.service-order-button:hover, .service-order-button:focus {background-color: #404bbf;}  
+
+/*Tab*/
+@media screen and (min-width: 768px) and (max-width: 1157px) {
+.container {width: 768px;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin: 0 auto;}
+/*Header Tablet*/
+.contacts-list {display: column;
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+        padding-top: 24px;
+        padding-bottom: 24px;}
+.logo {margin-right: 120px;}
+.menu-open-btn {display: none;}
+.navigation-list {display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+        gap: 40px;
+        margin-right: auto;}
+.navigation-item {font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #2e2f42;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
+.navigation-item:hover, .navigation:focus {color: #404BBF;}
+.current {position: relative;
+        color: #404bbf;}
+.current::after {content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        border-radius: 2px;
+        width: 100%;
+        height: 4px;
+        background: #404bbf;}
+.contacts-list {display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+                margin-left: 121px;}
+.contacts {font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.04em;
+        color: #434455;}
+.contacts:hover, .contacts:focus {color: #404BBF;} 
+
+/*Order service Tablet*/
+.buy-service {max-width: 768px;
+        padding-top: 112px;
+        padding-bottom: 112px;
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
+        url(../images/hero_tab_1x.jpg);}
+@media screen and (min-resolution: 192dpi), (min-resolution: 2dppx) {
+.buy-service {background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
+                url(../images/hero_tab_2x.jpg);}}
+.slogan {font-size: 56px;
+        line-height: 1.07;
+        max-width: 496px;}
+.button {margin-top: 36px;}
+
+/*Our advantages Tablet*/
+.advantages {padding-top: 96px;
+        padding-bottom: 96px;}
+.advantages-list {gap: 72px 24px;}
+.adv-item {width: calc((100% - 24px) / 2);}
+.advantages-title {text-align: left;}
+
+/*Our team Tablet*/
+.colleague-list {gap: 64px 24px;
+                padding-left: 108px;
+                padding-right: 108px;}
+.colleague-info {width: calc((100% - 24px) / 2);}
+
+/*Portfolio Tablet*/
+.portfolio-list {gap: 72px 24px ;}
+.portfolio-item {width: calc((100% - 24px) / 2);}
+
+/*Footer Tablet*/
+.footer .container {display: flex;
+                flex-wrap: wrap;
+                padding-left: 108px;}
+.footer-content {margin-right: 24px;}
+.footer-logo {justify-content: start;}
+
+/*Social media Tablet*/
+.social {margin: 0 0;}
+.social-title {text-align: left;}
+
+/*Subscribe box Tablet*/
+.subsribe-title {margin-right: 0;
+                margin-left: 0;}
+.subscribe-form {width: 453px;
+                display: flex;
+                gap: 24px;}
+
+/*Modal Tablet*/
+.modal {width: 408px;
+        min-height: 584px;
+        padding-left: 24px;
+        padding-right: 24px;}}
+
+/*Desktop*/
+@media screen and (min-width: 1158px) {
+.container {width: 1158px;
+                padding-left: 15px;
+                padding-right: 15px;
+                margin-right: auto;
+                margin-left: auto;} 
+/*Header-Desktop*/
+.logo {margin-right: 76px;}
+.menu-open-btn {display: none;}
+.navigation-content {padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;}
+.navigation-list {display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                flex-direction: row;
+                gap: 40px;
+                margin-right: auto;}
+.navigation-item {font-weight: 500;
+                font-size: 16px;
+                line-height: 1.5;
+                letter-spacing: 0.02em;
+                color: #2e2f42;
+                padding-top: 24px;
+                padding-bottom: 24px;
+                transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
+.navigation-item:hover, .navigation:focus {color: #404BBF;}
+.current {position: relative;
+        color: #404bbf;}
+.current::after {content: "";
+                position: absolute;
+                left: 0;
+                bottom: -1px;
+                border-radius: 2px;
+                width: 100%;
+                height: 4px;
+                background: #404bbf;}
+.contacts-list {font-style: normal;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 40px;
+                padding-top: 24px;
+                padding-bottom: 24px;}
+.contacts {font-weight: 400;
+                font-size: 16px;
+                line-height: 1.5;
+                letter-spacing: 0.02em;
+                color: #434455;
+                transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
+.contacts:hover, .contacts:focus {color: #404BBF;}
+
+/*Order service Desktop*/
+.buy-service {max-width: 1440px;
+                padding-top: 188px;
+                padding-bottom: 188px;
+                background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
+                url(../images/hero_desk_1x.jpg);}
+@media screen and (min-resolution: 192dpi), (min-resolution: 2dppx) {
+.buy-service {background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
+                url(../images/hero_desk_2x.jpg);}}
+.slogan {font-size: 56px;
+        line-height: 1.07;
+        max-width: 496px;}
+.button { margin-top: 48px;}       
+
+/*Our advantages Desktop*/
+.advantages {padding-top: 120px;
+                padding-bottom: 120px;}
+.advantages-list {display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 24px;}
+.adv-item {width: calc((100% - 72px) / 4);}
+.adv-item-img {display: flex;
+                align-items: center;
+                justify-content: center;
+                max-width: 264px;
+                height: 112px;
+                background-color: #f4f4fd;
+                border-radius: 4px;
+                border: 1px solid #8e8f99;
+                margin-bottom: 8px;
+                position: relative}
+.adv-item-icon {position: absolute;
+                fill:#2e2f42;;
+                background-position: 50% 50%;}
+.advantages-title {font-weight: 500;
+                font-size: 20px;
+                line-height: 1.2;}
+.adv-description {font-weight: 400;}
+                
+/*Our team Desktop*/                
+.team {padding-top: 120px;
+        padding-bottom: 120px;}
+.colleague-list {display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: center;
+                gap: 24px;
+                padding-right: 15px;
+                padding-left: 15px;}
+.colleague-info {width: calc((100% - 72px) / 4);}
+                
+/*Portfolio Desktop*/
+.portfolio {padding-top: 120px;
+        padding-bottom: 120px;}
+.portfolio .container {width: 1128px;}
+.portfolio-list {gap: 24px;
+                row-gap: 40px;}
+.portfolio-item {width: calc((100% - 48px) / 3);}
+
+/*Footer Desktop*/
+.footer {padding-top: 100px;
+        padding-bottom: 100px;}
+.footer .container {padding-left: 0;
+                display: flex;
+                flex-direction: row;}
+.footer-content {margin-right: 120px;}
+.footer-logo {justify-content: start;}
+.footer-text {max-width: 264px;}
+
+/*Social media Desktop*/
+.social {margin: 0 0;}
+.social-title {text-align: left;}
+
+/*Subscribe box Desktop*/
+.subscribe-box {margin-left: 80px;
+                display: block;
+                width: 453px;
+                min-height: 80px;}
+.subsribe-title {margin-right: 0;
+                margin-left: 0;}
+.subscribe-form {width: 453px;
+                display: flex;
+                gap: 24px;}
+.subscribe-input {width: 264px;
+                padding-left: 16px;}
+.subscribe-button {margin-right: 0;
+                margin-left: 0;}
+/*Modal Desktop*/
+.modal {width: 408px;
+        min-height: 584px;
+        padding-left: 24px;
+        padding-right: 24px;}}
