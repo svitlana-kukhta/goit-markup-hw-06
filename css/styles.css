@@ -179,7 +179,7 @@ p {margin-top: 0;
         transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
 .button:hover, .button:focus {background-color: #404BBF;}
 
-/*Our advantages*/
+/*Our advantages Mobile*/
 .advantages {padding-top: 56px;
                 padding-bottom: 56px;}
 .visually-hidden {position: absolute;
@@ -195,9 +195,8 @@ p {margin-top: 0;
 .advantages-list {display: flex;
                 flex-wrap: wrap;
                 gap: 72px;}
-.adv-item {}
 .adv-item-img {display: none;}
-.advantages-title { font-weight: 700;
+.advantages-title {font-weight: 700;
                 font-size: 36px;
                 line-height: 1.11;
                 letter-spacing: 0.02em;
@@ -329,8 +328,13 @@ p {margin-top: 0;
 .footer {background-color: #2e2f42;
         padding-top: 96px;
         padding-bottom: 96px;}
-.footer .container {display: column;} 
-.footer-logo {display: inline-block;
+.footer .container {display: column;}
+.footer-content {margin-bottom: 72px;}
+.footer-logo {display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+                gap: 0px;
                 margin-bottom: 16px;
                 font-family: "Raleway", sans-serif;
                 font-weight: 700;
@@ -338,25 +342,20 @@ p {margin-top: 0;
                 line-height: 1.17;
                 text-transform: uppercase;
                 letter-spacing: 0.03em;
-                color: #4d5ae5;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: row;
-                gap: 0px;}
+                color: #4d5ae5;}
 .footer-studio {color: #f4f4fd;}
 .footer-text {font-weight: 400;
                 font-size: 16px;
                 line-height: 1.5;
                 letter-spacing: 0.02em;
                 color: #f4f4fd;
-                max-width: 288px;
-                margin-bottom: 72px;}
+                max-width: 288px;}
 
 /*Social media Mobile*/
 .social {padding: 0 0;
         margin: 0 auto;
-        min-width: 208px;}
+        min-width: 208px;
+        margin-bottom: 72px;}
 .social-title {font-weight: 500;
                 font-size: 16px;
                 line-height: 1.5;
@@ -365,8 +364,7 @@ p {margin-top: 0;
                 margin-bottom: 16px;
                 text-align: center;}
 .soc-links-list {display: flex;
-                gap: 16px;
-                margin-bottom: 72px;
+                gap: 16px;                
                 justify-content: center;}
 .soc-links-item {width: 40px;
                 height: 40px;}        
@@ -668,12 +666,11 @@ p {margin-top: 0;
         padding-bottom: 96px;}
 .advantages-list {gap: 72px 24px;}
 .adv-item {width: calc((100% - 24px) / 2);}
-.advantages-title {text-align: left;}
+.advantages-title {text-align: start;}
 
 /*Our team Tablet*/
-.colleague-list {gap: 64px 24px;
-                padding-left: 108px;
-                padding-right: 108px;}
+.team .container {width: 584px;}
+.colleague-list {gap: 64px 24px;}
 .colleague-info {width: calc((100% - 24px) / 2);}
 
 /*Portfolio Tablet*/
@@ -683,7 +680,7 @@ p {margin-top: 0;
 /*Footer Tablet*/
 .footer .container {display: flex;
                 flex-wrap: wrap;
-                padding-left: 108px;}
+                width: 584px;}
 .footer-content {margin-right: 24px;}
 .footer-logo {justify-content: start;}
 
@@ -794,7 +791,8 @@ p {margin-top: 0;
                 background-position: 50% 50%;}
 .advantages-title {font-weight: 500;
                 font-size: 20px;
-                line-height: 1.2;}
+                line-height: 1.2;
+                text-align: start;}
 .adv-description {font-weight: 400;}
                 
 /*Our team Desktop*/                
